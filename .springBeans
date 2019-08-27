@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:com.s2.spring.cloud.config.server.ZuulServerApplication</config>
+		<config>java:com.s2.spring.cloud.auth.server.ZuulServerApplication</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
