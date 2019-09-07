@@ -40,7 +40,7 @@ public class AuthRequestHeaderFilter extends ZuulFilter {
     			roles.add(StringUtils.replaceEach(authority.getAuthority(), new String[]{"{authority=","}"}, new String[]{"",""}));
     		});
     	}
-        ctx.addZuulRequestHeader("username", userName);
+        ctx.addZuulRequestHeader("userId", userName);
         ctx.addZuulRequestHeader("roles", StringUtils.join(roles,','));
     }
     return null;
