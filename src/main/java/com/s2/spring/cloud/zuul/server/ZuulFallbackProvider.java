@@ -23,17 +23,17 @@ public class ZuulFallbackProvider implements FallbackProvider {
         return new ClientHttpResponse() {
             @Override
             public HttpStatus getStatusCode() throws IOException {
-                return HttpStatus.OK;
+                return HttpStatus.INTERNAL_SERVER_ERROR;
             }
 
             @Override
             public int getRawStatusCode() throws IOException {
-                return 200;
+                return 500;
             }
 
             @Override
             public String getStatusText() throws IOException {
-                return "OK";
+                return "INTERNAL SERVER ERROR";
             }
 
             @Override

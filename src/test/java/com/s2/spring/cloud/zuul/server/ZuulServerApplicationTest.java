@@ -82,14 +82,7 @@ public class ZuulServerApplicationTest {
 	public void testFallbackResponse_whenHystrixException_thenGatewayTimeout() throws Exception {
 		HystrixTimeoutException exception = new HystrixTimeoutException();
 		ClientHttpResponse response = fallback.fallbackResponse(ROUTE, exception);
-
-		assertEquals(HttpStatus.OK, response.getStatusCode());
-	}
-
-	@Test
-	public void testZuulFallback() throws Exception {
-		ResultActions result = mockMvc.perform(post("/any").accept(CONTENT_TYPE)).andExpect(status().isOk());
-		result.andReturn().getResponse().getContentAsString();
+		assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
 	}
 
 	@Test
