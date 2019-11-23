@@ -1,0 +1,14 @@
+s2:
+  check:
+    token:
+      endpoint: http://localhost:8080/oauth/check_token
+  client:
+    id: s2-client
+    secret: secret
+zuul:
+  sensitiveHeaders: Cookie,Set-Cookie
+  routes:
+    test:
+      path: /any/**
+      serviceId: test
+      strip-prefix: false
