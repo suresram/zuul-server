@@ -12,3 +12,6 @@ zuul:
       path: /any/**
       serviceId: test
       strip-prefix: false
+white:
+  listed:
+    endpoints: "/oauth/**,/actuator/**,/hystrix/**,/webjars/**"

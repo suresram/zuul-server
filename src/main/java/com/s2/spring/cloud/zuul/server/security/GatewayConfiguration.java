@@ -1,5 +1,6 @@
 package com.s2.spring.cloud.zuul.server.security;
 
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,9 +23,13 @@ public class GatewayConfiguration extends ResourceServerConfigurerAdapter {
 	@Value("${s2.client.secret}")
 	private String clientSecret;
 
+	@Value("${white.listed.endpoints}")
+	private String whiteListedEndPoints;
+
+	
 	@Override
 	public void configure(final HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/oauth/**","/actuator/**","/hystrix/**","/webjars/**").permitAll().antMatchers("/**")
+		http.csrf().disable().authorizeRequests().antMatchers(StringUtils.split(whiteListedEndPoints, ",")).permitAll().antMatchers("/**")
 				.authenticated();
 	}
 
