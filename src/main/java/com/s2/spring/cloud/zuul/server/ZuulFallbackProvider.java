@@ -43,7 +43,7 @@ public class ZuulFallbackProvider implements FallbackProvider {
 
             @Override
             public InputStream getBody() throws IOException {
-                return new ByteArrayInputStream("Sorry! We are facing some technical difficulties, please try again latter.".getBytes());
+                return new ByteArrayInputStream("Sorry! We are facing some technical difficulties, please try again later.".getBytes());
             }
 
             @Override
