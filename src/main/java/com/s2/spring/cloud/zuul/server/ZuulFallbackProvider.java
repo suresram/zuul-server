@@ -49,7 +49,7 @@ public class ZuulFallbackProvider implements FallbackProvider {
             @Override
             public HttpHeaders getHeaders() {
                 HttpHeaders headers = new HttpHeaders();
-                headers.setContentType(MediaType.APPLICATION_JSON);
+                headers.setContentType(MediaType.TEXT_PLAIN);
                 return headers;
             }
         };
