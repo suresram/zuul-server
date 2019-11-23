@@ -24,7 +24,7 @@ public class GatewayConfiguration extends ResourceServerConfigurerAdapter {
 
 	@Override
 	public void configure(final HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/oauth/**","/actuator/**","/hystrix/**").permitAll().antMatchers("/**")
+		http.csrf().disable().authorizeRequests().antMatchers("/oauth/**","/actuator/**","/hystrix/**","/webjars/**").permitAll().antMatchers("/**")
 				.authenticated();
 	}
 
