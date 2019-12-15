@@ -1,6 +1,6 @@
 spring:
   application:
-    name: travel-management-zuul-server
+    name: zuul-server
   cloud:
     config:
       fail-fast: true
